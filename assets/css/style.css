@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #84CAE7;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* final ajustes globales */
+
+/* inicio navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #136F63;
+    color: aliceblue;
+}
+
+.trigger{
+    padding: 0 1.2rem;
+    cursor: pointer;
+}
+.enlaces{
+    list-style: none; 
+    display: none;
+    gap: 0.4rem;
+    padding: 0 0.4rem;
+}
+
+.link{
+    cursor: pointer;
+}
+.brand{
+    display: flex;
+    width: 110px;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.5rem;
+}
+
+.brand img{
+    width: 100%;
+}
+
+/* final navbar */
+/* inicio main content */
+.content{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.container{
+    overflow-y: hidden;
+}
+
+.card{
+    background-color: aliceblue;
+}
+/* final main content */
+/* inicio footer */
+.footer{
+    background-color: #041B15;
+    color: aliceblue;
+}
+/* final footer */
