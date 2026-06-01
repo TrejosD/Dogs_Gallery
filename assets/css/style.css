@@ -11,8 +11,21 @@ body{
 
 /* final ajustes globales */
 
+/* inicio layout */
+.layout{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "nav"
+    "main"
+    "footer";
+
+}
+/* final layout */
+
 /* inicio navbar */
 .navbar{
+    grid-area: nav;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,12 +40,31 @@ body{
 .enlaces{
     list-style: none; 
     display: none;
-    gap: 0.4rem;
-    padding: 0 0.4rem;
+    gap: 0.6rem;
+    padding: 0 0.6rem;
 }
 
 .link{
     cursor: pointer;
+}
+
+.animation{
+    animation-name: donate;
+    text-decoration: underline;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+}
+
+@keyframes donate{
+    0%{transform: translate();}
+    20%{transform: translate(-6px);}
+    40%{transform: translate();}
+    80%{transform: translate(6px);}
+    100%{transform: translate();}
+    
 }
 .brand{
     display: flex;
@@ -49,23 +81,120 @@ body{
 /* final navbar */
 /* inicio main content */
 .content{
-    display: grid;
-    grid-template-columns: 1fr;
+    grid-area: main;
     text-align: center;
     padding: 2rem 1.5rem;
+    overflow: hidden;
+    min-height: 0;
 }
 
 .container{
-    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.gallery-wrapper{
+    overflow-y: auto;
 }
 
 .card{
     background-color: aliceblue;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1.3rem 0;
+    box-shadow: 1px 1px 12px rgba(0,0,0,0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover{
+    box-shadow: none;
+}
+
+.card img{
+    width: 100%;
+    height: 27rem;
+    filter: grayscale();
+    transition: filter 0.3s ease-in;
+}
+
+.card img:hover{
+    filter: none;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a{
+    background-color: aliceblue;
+    border: 1px solid #b5b4b4;
+    padding: 2px 4px;
+    cursor: pointer;
+    color: #041B15;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.pagination a:hover{
+    background-color: #b5b4b4;
+
 }
 /* final main content */
 /* inicio footer */
 .footer{
+    grid-area: footer;
     background-color: #041B15;
     color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    gap: 0.5rem;
+}
+.footer i{
+    cursor: pointer;
 }
 /* final footer */
+
+/* media queries */
+@media (min-width: 576px){
+    .trigger{
+        display: none;
+    }
+
+    .enlaces{
+        display: flex;
+    }
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:992px){
+    .layout{
+        grid-template-areas: 
+        "nav main"
+        "nav main"
+        "footer footer";
+        grid-template-columns: 180px 1fr;
+    }
+    .navbar{
+        flex-direction: column;
+        gap: 1.8rem;
+        justify-content: flex-start;
+    }
+
+    .brand{
+        flex-direction: column;
+    }
+    .enlaces{
+        flex-direction: column;
+    }
+
+    .container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
