@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #84CAE7;
+    background-color: #79b4ac;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -13,11 +13,13 @@ body{
 
 /* inicio layout */
 .layout{
+    height: 100dvh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
     "nav"
     "main"
+    "pagi"
     "footer";
 
 }
@@ -83,19 +85,15 @@ body{
 .content{
     grid-area: main;
     text-align: center;
-    padding: 2rem 1.5rem;
-    overflow: hidden;
     min-height: 0;
+    padding: 2rem 1.5rem;
+    overflow: auto;
 }
 
 .container{
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-}
-
-.gallery-wrapper{
-    overflow-y: auto;
 }
 
 .card{
@@ -122,6 +120,8 @@ body{
     filter: none;
 }
 .pagination{
+    grid-area: pagi;
+    padding: 1rem;
     display: flex;
     justify-content: center;
 }
@@ -178,6 +178,7 @@ body{
         grid-template-areas: 
         "nav main"
         "nav main"
+        "nav pagi"
         "footer footer";
         grid-template-columns: 180px 1fr;
     }
