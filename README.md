@@ -5,7 +5,7 @@ Proyecto estático desarrollado como práctica de maquetación con **HTML** y **
 ## Acceso
 
 ```
-Agregar link pages
+https://trejosd.github.io/Dogs_Gallery/
 ```
 
 ## Descripción
